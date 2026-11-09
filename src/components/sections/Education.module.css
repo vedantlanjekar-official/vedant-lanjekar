@@ -1,0 +1,341 @@
+.timeline {
+  position: relative;
+  padding-left: clamp(2rem, 4vw, 4rem);
+}
+
+.list {
+  display: grid;
+  gap: clamp(3rem, 6vw, 5.5rem);
+}
+
+.rail {
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  bottom: 0;
+  width: 1px;
+  background: var(--c-line);
+}
+
+.railFill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--c-accent), rgba(128, 227, 197, 0.15));
+  transform-origin: top;
+}
+
+.marker {
+  position: absolute;
+  left: calc(-1 * clamp(2rem, 4vw, 4rem) - 4px);
+  top: 0.55rem;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--c-accent);
+  background: var(--c-bg);
+  transform: rotate(45deg);
+}
+
+.degree,
+.school {
+  position: relative;
+}
+
+.num {
+  font-family: var(--f-mono);
+  font-size: var(--fs-small);
+  color: var(--c-accent);
+}
+
+.degreeHead {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.degreeTitle {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(1.6rem, 1rem + 2.4vw, 3.2rem);
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  max-width: 22ch;
+}
+
+.institution {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  color: var(--c-text-2);
+}
+
+/* Same white plate as the Experience logos: equal 8px border on every side. */
+.logoPlate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  height: 64px;
+  padding: 8px;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+.logoPlate img {
+  display: block;
+  height: 48px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+}
+
+.degreeBody {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  margin-left: 5rem;
+}
+
+.facts dl {
+  display: grid;
+  border-top: 1px solid var(--c-line-2);
+}
+
+.fact {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--c-line);
+}
+
+.fact dd {
+  color: var(--c-text);
+}
+
+.campus {
+  margin-top: 1.5rem;
+  padding: var(--mat);
+  background: var(--mat-color);
+}
+
+.campus img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  filter: saturate(0.75) brightness(0.85);
+  transition: filter 600ms;
+}
+
+.campus:hover img {
+  filter: none;
+}
+
+.sgpa table {
+  width: 100%;
+  font-variant-numeric: tabular-nums;
+}
+
+.sgpa caption {
+  text-align: left;
+  padding-bottom: 1rem;
+}
+
+.sgpa th,
+.sgpa td {
+  text-align: left;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--c-line);
+  font-weight: 400;
+}
+
+.sgpa thead th {
+  font-family: var(--f-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+  border-bottom-color: var(--c-line-2);
+}
+
+.sgpa tbody th {
+  color: var(--c-text-2);
+  width: 38%;
+}
+
+.score {
+  font-family: var(--f-display);
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.6rem);
+  letter-spacing: -0.02em;
+  color: var(--c-text);
+  width: 20%;
+}
+
+.schoolName {
+  margin-top: -0.5rem;
+  color: var(--c-text-2);
+}
+
+.scoreRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem 2.5rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+}
+
+.scoreBlock {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.scoreBig {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(2.2rem, 1.4rem + 2.4vw, 3.4rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--c-text);
+}
+
+.docs {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.school {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr) auto;
+  gap: 1rem;
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--c-line);
+}
+
+.school .marker {
+  top: calc(clamp(2rem, 4vw, 3rem) + 0.5rem);
+}
+
+.schoolTitle {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(1.3rem, 1rem + 1.2vw, 2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.schoolMain {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.inlineFacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+}
+
+.inlineFacts dd {
+  margin-top: 0.3rem;
+  color: var(--c-text);
+}
+
+.records {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.recordTable {
+  width: 100%;
+}
+
+.recordTable caption {
+  text-align: left;
+  padding-bottom: 0.75rem;
+  color: var(--c-text);
+}
+
+.recordTable th,
+.recordTable td {
+  text-align: left;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--c-line);
+  font-weight: 400;
+}
+
+.recordTable th {
+  font-family: var(--f-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+}
+
+.schoolAside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.logoPair {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.campusSmall {
+  width: 220px;
+  padding: var(--mat-sm);
+  background: var(--mat-color);
+}
+
+.campusSmall img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  filter: saturate(0.7) brightness(0.85);
+}
+
+@media (max-width: 1000px) {
+  .degreeBody {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+
+  .school {
+    grid-template-columns: 1fr;
+  }
+
+  .schoolAside {
+    align-items: flex-start;
+    flex-direction: row;
+  }
+
+  .campusSmall {
+    width: 160px;
+  }
+}
+
+@media (max-width: 640px) {
+  .degreeHead {
+    grid-template-columns: 1fr;
+  }
+
+  .fact {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .records {
+    grid-template-columns: 1fr;
+  }
+}

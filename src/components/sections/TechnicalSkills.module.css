@@ -1,0 +1,128 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.block {
+  padding: 1.25rem 1.35rem 1.4rem;
+  border: 1px solid var(--c-line);
+  background: rgba(11, 15, 18, 0.45);
+  transition:
+    border-color 400ms,
+    background-color 400ms,
+    opacity 400ms;
+  animation: block-in 500ms var(--ease-out) both;
+}
+
+.block:hover {
+  border-color: var(--c-line-3);
+  background: rgba(21, 27, 32, 0.7);
+}
+
+.grid:hover .block:not(:hover) {
+  opacity: 0.6;
+}
+
+.blockHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(1rem, 0.92rem + 0.35vw, 1.2rem);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.count {
+  font-family: var(--f-mono);
+  font-size: var(--fs-micro);
+  color: var(--c-text-3);
+  flex-shrink: 0;
+}
+
+.block:hover .count {
+  color: var(--c-accent);
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  height: 38px;
+  padding: 0 0.8rem;
+  border: 1px solid var(--c-line);
+  background: var(--c-bg);
+  font-size: var(--fs-small);
+  color: var(--c-text);
+  transition:
+    border-color 250ms,
+    color 250ms,
+    transform 350ms var(--ease-out),
+    box-shadow 350ms;
+  animation: item-in 450ms var(--ease-out) both;
+  animation-delay: calc(var(--i) * 18ms);
+}
+
+.item:hover {
+  border-color: var(--c-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(128, 227, 197, 0.15);
+}
+
+.logo {
+  color: var(--c-text-2);
+  flex-shrink: 0;
+  transition:
+    color 250ms,
+    transform 350ms var(--ease-out);
+}
+
+.item:hover .logo {
+  color: var(--c-accent);
+  transform: scale(1.12);
+}
+
+.item[data-wordmark] .itemName {
+  font-family: var(--f-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c-text-2);
+}
+
+.item[data-wordmark]:hover .itemName {
+  color: var(--c-accent);
+}
+
+@keyframes block-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes item-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

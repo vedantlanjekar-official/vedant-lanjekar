@@ -1,0 +1,190 @@
+.root {
+  display: grid;
+  gap: 1rem;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.readout {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  min-height: 2rem;
+}
+
+.readout strong {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: -0.03em;
+  color: var(--c-accent);
+}
+
+.chartWrap {
+  position: relative;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.grid {
+  stroke: var(--c-line);
+  stroke-width: 1;
+}
+
+.tick,
+.xLabel {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  fill: var(--c-text-3);
+}
+
+.guide {
+  stroke: var(--c-accent);
+  stroke-opacity: 0.4;
+  stroke-dasharray: 3 4;
+}
+
+.line {
+  fill: none;
+  stroke: var(--c-accent);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.8s var(--ease-out);
+}
+
+.root[data-drawn] .line {
+  stroke-dashoffset: 0;
+}
+
+.area {
+  opacity: 0;
+  transition: opacity 1.2s var(--ease-out) 0.8s;
+}
+
+.root[data-drawn] .area {
+  opacity: 1;
+}
+
+.point {
+  opacity: 0;
+  transition: opacity 500ms var(--ease-out);
+  transition-delay: calc(400ms + var(--i) * 180ms);
+}
+
+.root[data-drawn] .point {
+  opacity: 1;
+}
+
+.halo {
+  fill: var(--c-accent);
+  fill-opacity: 0;
+  transition: fill-opacity 300ms;
+}
+
+.dot {
+  fill: var(--c-bg);
+  stroke: var(--c-accent);
+  stroke-width: 2;
+  transition: fill 300ms;
+}
+
+.value {
+  font-family: var(--f-display);
+  font-size: 13px;
+  fill: var(--c-text-2);
+  transition: fill 300ms;
+}
+
+.point[data-active] .halo {
+  fill-opacity: 0.16;
+}
+
+.point[data-active] .dot {
+  fill: var(--c-accent);
+}
+
+.point[data-active] .value {
+  fill: var(--c-text);
+  font-weight: 600;
+}
+
+.hits {
+  position: absolute;
+  inset: 0;
+}
+
+.hit {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 14%;
+  transform: translateX(-50%);
+  background: transparent;
+}
+
+.hit:focus-visible {
+  outline: 1px dashed var(--c-accent);
+  outline-offset: -4px;
+}
+
+.statements {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  /* Column centres line up with the chart points (x = 44…612 of a 640 viewBox). */
+  margin: 0 -4.5% 0 -2%;
+}
+
+.statements li {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  padding: 0.6rem 0.25rem;
+  border-top: 1px solid var(--c-line);
+  text-align: center;
+  transition:
+    background-color 300ms,
+    border-color 300ms;
+}
+
+.statements li[data-active] {
+  background: rgba(128, 227, 197, 0.05);
+  border-top-color: var(--c-accent);
+}
+
+.semName {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+}
+
+.semValue {
+  font-family: var(--f-display);
+  font-size: 1.05rem;
+  color: var(--c-text);
+}
+
+@media (max-width: 640px) {
+  .statements {
+    gap: 0;
+  }
+
+  .semName {
+    font-size: 9px;
+  }
+}

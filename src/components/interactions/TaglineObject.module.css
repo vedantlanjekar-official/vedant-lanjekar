@@ -1,0 +1,10 @@
+.root {
+  position: relative;
+  height: clamp(300px, 34vw, 460px);
+  touch-action: pan-y;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+}

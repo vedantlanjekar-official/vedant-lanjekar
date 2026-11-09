@@ -1,0 +1,48 @@
+:root {
+  --c-bg: #0b0f12;
+  --c-bg-2: #151b20;
+  --c-bg-3: #1b2228;
+  --c-text: #f2f2ed;
+  --c-text-2: #a4adb5;
+  --c-text-3: #7d8790;
+  --c-accent: #80e3c5;
+  --c-accent-dim: rgba(128, 227, 197, 0.14);
+  --c-line: rgba(242, 242, 237, 0.09);
+  --c-line-2: rgba(242, 242, 237, 0.16);
+  --c-line-3: rgba(242, 242, 237, 0.28);
+
+  --f-display: 'Space Grotesk Variable', 'Space Grotesk', system-ui, sans-serif;
+  --f-body: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --fs-micro: 0.6875rem;
+  --fs-small: 0.8125rem;
+  --fs-body: clamp(0.95rem, 0.9rem + 0.2vw, 1.0625rem);
+  --fs-lead: clamp(1.15rem, 1rem + 0.7vw, 1.6rem);
+  --fs-h3: clamp(1.25rem, 1.05rem + 0.8vw, 1.75rem);
+  --fs-h2: clamp(2rem, 1.4rem + 2.6vw, 4rem);
+  --fs-h1: clamp(3rem, 1.6rem + 6.6vw, 8.75rem);
+
+  --gutter: clamp(1.25rem, 0.6rem + 3vw, 4rem);
+  /* Even white border around every photo and certificate. */
+  --mat: 6px;
+  --mat-sm: 4px;
+  --mat-color: #ffffff;
+  --section-y: clamp(6rem, 4rem + 8vw, 11rem);
+  --max-w: 1560px;
+  --measure: 68ch;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 240ms;
+  --dur-med: 600ms;
+  --dur-slow: 1100ms;
+
+  --nav-h: 64px;
+  --z-bg: 0;
+  --z-content: 2;
+  --z-nav: 50;
+  --z-modal: 80;
+  --z-cursor: 95;
+  --z-loader: 100;
+}

@@ -1,0 +1,28 @@
+.section {
+  overflow: hidden;
+}
+
+.kicker {
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: baseline;
+}
+
+.kicker :global(.t-mono) {
+  color: var(--c-accent);
+}
+
+.stage {
+  margin-top: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.footnote {
+  margin-top: 1.5rem;
+}
+
+.footnote :global(.t-mono) {
+  font-size: var(--fs-micro);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+}

@@ -1,0 +1,65 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-top: 1px solid var(--c-line-3);
+  background: linear-gradient(180deg, rgba(21, 27, 32, 0.7), transparent);
+}
+
+.index {
+  font-family: var(--f-mono);
+  font-size: var(--fs-small);
+  color: var(--c-accent);
+}
+
+.name {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.designation {
+  display: grid;
+  gap: 0.35rem;
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--c-text-2);
+}
+
+.links {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--c-line);
+}
+
+.link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: var(--fs-small);
+  overflow-wrap: anywhere;
+  transition: color var(--dur-fast);
+}
+
+.link:hover {
+  color: var(--c-accent);
+}
+
+@media (max-width: 1000px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}

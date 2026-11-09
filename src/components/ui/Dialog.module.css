@@ -1,0 +1,87 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background: rgba(5, 7, 9, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fade 450ms var(--ease-out);
+}
+
+.panel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--c-bg);
+  animation: rise 800ms var(--ease-out);
+}
+
+.backdrop[data-variant='drawer'] .panel {
+  left: auto;
+  width: min(720px, 100%);
+  border-left: 1px solid var(--c-line-2);
+  background: var(--c-bg-2);
+  animation: slide 700ms var(--ease-out);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: var(--nav-h);
+  padding-inline: var(--gutter);
+  border-bottom: 1px solid var(--c-line);
+  flex-shrink: 0;
+}
+
+.toolbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.close {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  height: 38px;
+  padding: 0 0.9rem;
+  border: 1px solid var(--c-line-2);
+  transition: border-color var(--dur-fast), color var(--dur-fast);
+}
+
+.close:hover {
+  border-color: var(--c-accent);
+  color: var(--c-accent);
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(100%);
+  }
+}

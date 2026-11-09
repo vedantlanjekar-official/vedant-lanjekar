@@ -1,0 +1,39 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.thumb {
+  display: block;
+  height: 64px;
+  padding: var(--mat-sm);
+  background: var(--mat-color);
+  overflow: hidden;
+  transition:
+    box-shadow var(--dur-fast),
+    transform 500ms var(--ease-out);
+}
+
+.row[data-size='md'] .thumb {
+  height: 96px;
+}
+
+.thumb img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(0.35) brightness(0.9);
+  transition: filter 400ms;
+}
+
+.thumb:hover,
+.thumb:focus-visible {
+  box-shadow: 0 0 0 1px var(--c-accent);
+  transform: translateY(-2px);
+}
+
+.thumb:hover img,
+.thumb:focus-visible img {
+  filter: none;
+}

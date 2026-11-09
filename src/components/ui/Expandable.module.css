@@ -1,0 +1,57 @@
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  color: var(--c-text-2);
+  transition: color var(--dur-fast);
+}
+
+.trigger:hover {
+  color: var(--c-accent);
+}
+
+.trigger:hover :global(.t-mono) {
+  color: var(--c-accent);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--c-line-2);
+  transition:
+    transform 500ms var(--ease-out),
+    border-color var(--dur-fast),
+    background-color var(--dur-fast);
+}
+
+.root[data-open] .icon {
+  transform: rotate(45deg);
+  border-color: var(--c-accent);
+  background: var(--c-accent);
+  color: var(--c-bg);
+}
+
+.region {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 650ms var(--ease-out);
+}
+
+.root[data-open] .region {
+  grid-template-rows: 1fr;
+}
+
+.inner {
+  min-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 400ms;
+}
+
+.root[data-open] .inner {
+  opacity: 1;
+  transition: opacity 600ms 150ms;
+}
