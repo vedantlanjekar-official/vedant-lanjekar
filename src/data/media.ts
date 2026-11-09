@@ -2,7 +2,6 @@ import type { Certificate, ImageAsset } from './types';
 import {
   certCouncil,
   certHackathon,
-  certInternship,
   certSocial,
   certWorkshop,
   gallery,
@@ -115,23 +114,6 @@ export const achievementArchive: Certificate[] = [
   cert(certHackathon, '25', 'AI-DS Project Showcase’25', 'DriveU project certificate'),
   cert(certHackathon, '26', 'Innovate’25 — AI-DS Seminar Contest', 'Seminar contest certificate'),
 ];
-
-/** Section 07: keyed by experience number. */
-export const experienceImages: Record<string, Certificate[]> = {
-  '7.1': [
-    cert(certInternship, 'valmet-internship-letter', 'Valmet — Internship letter'),
-    cert(certInternship, 'valmet-internship-letter-extension', 'Valmet — Internship extension letter'),
-  ],
-  '7.2': [
-    cert(certInternship, '1', 'Bharat Electrical & Engineering — Offer letter'),
-    cert(certInternship, '2', 'Bharat Electrical & Engineering — Certificate of completion'),
-  ],
-  '7.3': [],
-  '7.4': [
-    cert(certInternship, '3', 'Acmegrade x Mood Indigo, IIT Bombay — Certificate of training completion'),
-    cert(certInternship, '4', 'Acmegrade — Internship certification'),
-  ],
-};
 
 /** Section 10: keyed by leadership number. */
 export const leadershipImages: Record<string, Certificate[]> = {

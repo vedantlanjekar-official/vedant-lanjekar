@@ -241,10 +241,6 @@
   color: var(--c-accent);
 }
 
-.docs {
-  align-self: start;
-}
-
 @media (max-width: 900px) {
   .rail {
     display: none;

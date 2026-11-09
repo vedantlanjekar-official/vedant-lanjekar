@@ -1,12 +1,11 @@
 import { useLayoutEffect, useRef } from 'react';
 import { Mail, Phone } from 'lucide-react';
 import { experience } from '../../data/experience';
-import { experienceImages, logo } from '../../data/media';
+import { logo } from '../../data/media';
 import { gsap, prefersReducedMotion } from '../../lib/motion';
 import { Section, SectionHeader } from '../layout/Section';
 import { MaskText, Reveal } from '../interactions/Reveal';
 import { ExtLink } from '../ui/ExtLink';
-import { CertificateThumbs } from '../certificates/CertificateThumbs';
 import s from './shared.module.css';
 import styles from './Experience.module.css';
 
@@ -134,8 +133,8 @@ export function Experience() {
                   </ul>
                 </Reveal>
 
-                <div className={styles.footer}>
-                  {x.manager && (
+                {x.manager && (
+                  <div className={styles.footer}>
                     <Reveal className={styles.manager}>
                       <p className={s.label}>Manager Contact</p>
                       <p className={styles.mName}>{x.manager.name}</p>
@@ -155,14 +154,8 @@ export function Experience() {
                         )}
                       </div>
                     </Reveal>
-                  )}
-                  {experienceImages[x.num]?.length > 0 && (
-                    <Reveal delay={100} className={styles.docs}>
-                      <p className={s.label}>Documents</p>
-                      <CertificateThumbs items={experienceImages[x.num]} label="Experience" size="md" />
-                    </Reveal>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
             </li>
           ))}
