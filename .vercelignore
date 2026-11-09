@@ -1,0 +1,8 @@
+node_modules
+dist
+public/media
+*.tsbuildinfo
+*.log
+.cursor
+docs
+*.docx
